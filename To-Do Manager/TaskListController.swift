@@ -10,7 +10,18 @@ import UIKit
 class TaskListController: UITableViewController {
 
     let tasksStorage: TasksStorageProtocol = TasksStorage()
-    var tasks: [TaskPriority: [TaskProtocol]] = [:]
+    var tasks: [TaskPriority: [TaskProtocol]] = [:] {
+        didSet {
+            // сортировка списка задач
+            for (tasksGroupPriority, tasksGroup) in tasks {
+                tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
+                    let task1StatusPosition = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                    let task2StatusPosition = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                    return task1StatusPosition < task2StatusPosition
+                }
+            }
+        }
+    }
     let sectionsTypesPosition: [TaskPriority] = [.important, .normal]
     var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
     
@@ -53,6 +64,43 @@ class TaskListController: UITableViewController {
         return title
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1. Проверяем существование задачи
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return
+        }
+        // 2. Убеждаемся, что задача не является выполненной
+        guard tasks[taskType]![indexPath.row].status == .planned else {
+            // снимаем выделение со строки
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        // 3. Отмечаем задачу как выполненную
+        tasks[taskType]![indexPath.row].status = .completed
+        // 4. Перезагружаем секцию таблицы
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        // получаем данные о задаче, которую необходимо перевести в статус "запланирована"
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return nil
+        }
+        // проверяем, что задача имеет статус "выполнено"
+        guard tasks[taskType]![indexPath.row].status == .completed else {
+            return nil
+        }
+        // создаем действие для изменения статуса
+        let actionSwipeInstance = UIContextualAction(style: .normal, title: "Не выполнена") { _,_,_ in
+            self.tasks[taskType]![indexPath.row].status = .planned
+            self.tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+        }
+        // возвращаем настроенный объект
+        return UISwipeActionsConfiguration(actions: [actionSwipeInstance])
+    }
+    
     // MARK: - Private methods
     private func loadTasks() {
         sectionsTypesPosition.forEach { priority in
@@ -61,14 +109,6 @@ class TaskListController: UITableViewController {
         
         tasksStorage.loadTasks().forEach { task in
             tasks[task.type]?.append(task)
-        }
-        // сортировка списка задач
-        for (tasksGroupPriority, tasksGroup) in tasks {
-            tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
-                let task1StatusPosition = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
-                let task2StatusPosition = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
-                return task1StatusPosition < task2StatusPosition
-            }
         }
     }
     
