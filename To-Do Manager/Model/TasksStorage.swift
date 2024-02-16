@@ -1,5 +1,5 @@
 //
-//  TaskStorage.swift
+//  TasksStorage.swift
 //  To-Do Manager
 //
 //  Created by Andrei Shpartou on 16/02/2024.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol TaskStorageProtocol {
+protocol TasksStorageProtocol {
     func loadTasks() -> [TaskProtocol]
     func saveTasks(_ tasks: [TaskProtocol])
 }
 
-class TaskStorage: TaskStorageProtocol {
+class TasksStorage: TasksStorageProtocol {
     func loadTasks() -> [TaskProtocol] {
         let testTasks: [TaskProtocol] = [
             Task(title: "Купить хлеб", type: .normal, status: .planned),
