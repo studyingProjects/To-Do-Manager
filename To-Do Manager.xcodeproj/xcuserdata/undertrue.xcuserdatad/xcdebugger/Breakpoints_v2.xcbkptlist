@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4E51A103-0679-4C19-9D51-493D01F607AA"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20249AB5-DEFA-422C-AFC3-1BB41B2505BF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To-Do Manager/TaskListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "tableView(_:moveRowAt:to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "20249AB5-DEFA-422C-AFC3-1BB41B2505BF - 51b3bb9c6cb92c85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_Manager.TaskListController.tableView(_: __C.UITableView, moveRowAt: Foundation.IndexPath, to: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "To-Do Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "1620">
+               </Location>
+               <Location
+                  uuid = "20249AB5-DEFA-422C-AFC3-1BB41B2505BF - 51b3bb9c6cb92c85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_Manager.TaskListController.tableView(_: __C.UITableView, moveRowAt: Foundation.IndexPath, to: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "To-Do Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "1984">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "558C4635-868B-47A5-AAC4-3907D9C65E86"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To-Do Manager/TaskListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "tableView(_:moveRowAt:to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "558C4635-868B-47A5-AAC4-3907D9C65E86 - 51b3bb9c6cb92295"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_Manager.TaskListController.tableView(_: __C.UITableView, moveRowAt: Foundation.IndexPath, to: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "To-Do Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  uuid = "558C4635-868B-47A5-AAC4-3907D9C65E86 - 51b3bb9c6cb92295"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_Manager.TaskListController.tableView(_: __C.UITableView, moveRowAt: Foundation.IndexPath, to: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "To-Do Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "576">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72F9CAAD-3AB1-4112-9747-5B15EF0D1A03"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To-Do Manager/TaskListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06DD972D-B53A-4A92-8449-EB5A83C06850"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To-Do Manager/TaskListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "tableView(_:canMoveRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E6A38EA-9766-433D-A3CD-8543C07195BE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To-Do Manager/TaskListController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "tasks"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

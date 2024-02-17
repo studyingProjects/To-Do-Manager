@@ -119,17 +119,21 @@ class TaskListController: UITableViewController {
         // секция, в которую происходит перемещение
         let taskTypeTo = sectionsTypesPosition[destinationIndexPath.section]
         // безопасно извлекаем задачу, тем самым копируем ее
-        guard let task = tasks[taskTypeFrom]?[sourceIndexPath.row] else {
+        guard var movedTask = tasks[taskTypeFrom]?[sourceIndexPath.row] else {
             return
         }
-        // удаляем задачу с места, от куда она перенесена
+        // удаляем задачу с места, откуда она перенесена
         tasks[taskTypeFrom]!.remove(at: sourceIndexPath.row)
-        // вставляем задачу на новую позицию
-        tasks[taskTypeTo]!.insert(task, at: destinationIndexPath.row)
         // если секция изменилась, изменяем тип задачи в соответствии с новой позицией
         if taskTypeFrom != taskTypeTo {
-            tasks[taskTypeTo]![destinationIndexPath.row].type = taskTypeTo
+            movedTask.type = taskTypeTo
         }
+        // вставляем задачу на новую позицию
+        tasks[taskTypeTo]!.insert(movedTask, at: destinationIndexPath.row)
+//        //если секция изменилась, изменяем тип задачи в соответствии с новой позицией
+//        if taskTypeFrom != taskTypeTo {
+//            tasks[taskTypeTo]![destinationIndexPath.row].type = taskTypeTo
+//        }
         // обновляем данные
         tableView.reloadData()
     }
