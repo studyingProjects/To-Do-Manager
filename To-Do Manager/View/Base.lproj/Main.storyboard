@@ -171,7 +171,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="NeD-0d-w0u" kind="show" id="cLT-to-5Aa"/>
+                                            <segue destination="NeD-0d-w0u" kind="show" identifier="toTaskTypeScreen" id="cLT-to-5Aa"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0eu-Dx-DIb">

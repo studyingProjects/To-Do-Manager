@@ -14,14 +14,16 @@ class TaskTypeController: UITableViewController {
     // 2. коллекция доступных типов задач с их описанием
     private var taskTypesInformation: [TypeCellDescription] = [
         (type: .important,
-         title: "Важная",
+         title: "Important",
          description: "Такой тип задач является наиболее приоритетным для выполнения. Все важные задачи выводятся в самом верху списка задач"),
         (type: .normal,
-         title: "Текущая",
+         title: "Current",
          description: "Задача с обычным приоритетом")
     ]
     // 3. выбранный приоритет
     var selectedType: TaskPriority = .normal
+    // обработчик выбора типа
+    var doAfterTypeSelected: ((TaskPriority) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,15 @@ class TaskTypeController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // получаем выбранный тип
+        let selectedType = taskTypesInformation[indexPath.row].type
+        // вызов обработчика
+        doAfterTypeSelected?(selectedType)
+        // переход к предыдущему экрану
+        navigationController?.popViewController(animated: true)
     }
 
     /*
