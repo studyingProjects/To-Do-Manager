@@ -11,6 +11,7 @@ class TaskEditController: UITableViewController {
 
     @IBOutlet var taskTitle: UITextField!
     @IBOutlet var taskTypeLabel: UILabel!
+    @IBOutlet var taskStatusSwitch: UISwitch!
     
     var taskText: String = ""
     var taskType: TaskPriority = .normal
@@ -32,6 +33,10 @@ class TaskEditController: UITableViewController {
         taskTitle?.text = taskText
         // обновление метки в соответствии текущим типом
         taskTypeLabel.text = taskTitles[taskType]
+        // обновляем статус задачи
+        if taskStatus == .completed {
+            taskStatusSwitch.isOn = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,9 +53,19 @@ class TaskEditController: UITableViewController {
             }
         }
     }
-
+    
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
+        // получаем актуальные значения
+        let title = taskTitle?.text ?? ""
+        let type = taskType
+        let status: TaskStatus = taskStatusSwitch.isOn ? .completed : .planned
+        // вызываем обработчик
+        doAfterEdit?(title, type, status)
+        // возвращаемся к предыдущему экрану
+        navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
