@@ -59,7 +59,7 @@ class TaskEditController: UITableViewController {
         let title = taskTitle?.text ?? ""
         guard !title.isEmpty else {
             let alert = UIAlertController(title: "Error", message: "Fill in the title to save remind", preferredStyle: .alert)
-            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel)
+            let actionCancel = UIAlertAction(title: "Cancel", style: .default)
             alert.addAction(actionCancel)
             self.present(alert, animated: true)
             return
@@ -82,6 +82,10 @@ class TaskEditController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

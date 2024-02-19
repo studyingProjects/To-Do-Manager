@@ -163,53 +163,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2586ED28-620A-47C6-8123-FC1DE1A9FC1C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "To-Do Manager/TaskEditController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "saveTask(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2586ED28-620A-47C6-8123-FC1DE1A9FC1C - 3ed012b67d12d042"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "To_Do_Manager.TaskEditController.saveTask(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskEditController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1076">
-               </Location>
-               <Location
-                  uuid = "2586ED28-620A-47C6-8123-FC1DE1A9FC1C - 3ed012b67d12d1a3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "To_Do_Manager.TaskEditController.saveTask(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskEditController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "520">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
