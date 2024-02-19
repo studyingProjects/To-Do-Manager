@@ -20,6 +20,12 @@ class TaskListController: UITableViewController {
                     return task1StatusPosition < task2StatusPosition
                 }
             }
+            // сохранение задач
+            var savingArray: [TaskProtocol] = []
+            tasks.forEach { _, value in
+                savingArray += value
+            }
+            tasksStorage.saveTasks(savingArray)
         }
     }
     let sectionsTypesPosition: [TaskPriority] = [.important, .normal]
@@ -28,7 +34,7 @@ class TaskListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadTasks()
+        //loadTasks() // реализовано в SceneDelegate willConnectTo
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
     }
@@ -143,6 +149,7 @@ class TaskListController: UITableViewController {
         tasks[taskType]?.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
+
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -173,16 +180,28 @@ class TaskListController: UITableViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Private methods
-    private func loadTasks() {
-        sectionsTypesPosition.forEach { priority in
-            tasks[priority] = []
+    func setTasks(_ taskCollection: [TaskProtocol]) {
+        // подготовка коллекции с задачами
+        // будем использовать только те задачи, для которых определена секция
+        sectionsTypesPosition.forEach { taskType in
+            tasks[taskType] = []
         }
         
-        tasksStorage.loadTasks().forEach { task in
+        taskCollection.forEach { task in
             tasks[task.type]?.append(task)
         }
     }
+    
+    // MARK: - Private methods
+//    private func loadTasks() {
+//        sectionsTypesPosition.forEach { priority in
+//            tasks[priority] = []
+//        }
+//        
+//        tasksStorage.loadTasks().forEach { task in
+//            tasks[task.type]?.append(task)
+//        }
+//    }
     
     // ячейка на основе ограничений
     private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -> UITableViewCell {
