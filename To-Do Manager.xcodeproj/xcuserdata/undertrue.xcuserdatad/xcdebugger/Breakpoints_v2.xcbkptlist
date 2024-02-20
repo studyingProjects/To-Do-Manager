@@ -14,73 +14,10 @@
             filePath = "To-Do Manager/TaskListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "TaskListController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "46C7279B-442A-46C2-94E2-D9CFD5912A72"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "To-Do Manager/TaskListController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "TaskListController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "46C7279B-442A-46C2-94E2-D9CFD5912A72 - 98d39c3b8632da0c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "To_Do_Manager.TaskListController.getConfiguredTaskCell_constraints(for: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "3500">
-               </Location>
-               <Location
-                  uuid = "46C7279B-442A-46C2-94E2-D9CFD5912A72 - 5e08229dd86c59d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "To_Do_Manager.TaskListController.loadTasks() -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "46C7279B-442A-46C2-94E2-D9CFD5912A72 - bfd523d476cc81a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (To_Do_Manager.TaskProtocol) -&gt; () in To_Do_Manager.TaskListController.loadTasks() -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/TaskListController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "202"
-                  endingLineNumber = "202"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "tasks"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -118,49 +55,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8FB71508-17E6-4081-AEF0-DF3A335BD960"
+            uuid = "AB03D884-3349-425D-8877-C53E30D6331C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "To-Do Manager/Model/TasksStorage.swift"
+            filePath = "To-Do Manager/TaskListController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "saveTasks(_:)"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "setTasks(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8FB71508-17E6-4081-AEF0-DF3A335BD960 - cd1f7a7be3c72795"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "To_Do_Manager.TasksStorage.saveTasks(Swift.Array&lt;To_Do_Manager.TaskProtocol&gt;) -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/Model/TasksStorage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "8FB71508-17E6-4081-AEF0-DF3A335BD960 - ce7387bd8749342c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (To_Do_Manager.TaskProtocol) -&gt; () in To_Do_Manager.TasksStorage.saveTasks(Swift.Array&lt;To_Do_Manager.TaskProtocol&gt;) -&gt; ()"
-                  moduleName = "To-Do Manager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/undertrue/Developer/Studying/Usov%20UIKit/To-Do%20Manager/To-Do%20Manager/Model/TasksStorage.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

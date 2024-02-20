@@ -9,6 +9,7 @@ import UIKit
 
 class TaskListController: UITableViewController {
 
+    // MARK: - Properties
     let tasksStorage: TasksStorageProtocol = TasksStorage()
     var tasks: [TaskPriority: [TaskProtocol]] = [:] {
         didSet {
@@ -34,6 +35,11 @@ class TaskListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 1. получение значение типа UINib, соответствующее xib-файлу кастомной ячейки
+        let cellTypeNib = UINib(nibName: "EmptyRowCell", bundle: nil)
+        // 2. регистрация кастомной ячейки в табличном представлении
+        tableView.register(cellTypeNib, forCellReuseIdentifier: "EmptyRowCell")
+        
         //loadTasks() // реализовано в SceneDelegate willConnectTo
         // кнопка активации режима редактирования
         navigationItem.leftBarButtonItem = editButtonItem
@@ -45,6 +51,7 @@ class TaskListController: UITableViewController {
             destination.doAfterEdit = { [unowned self] title, type, status in
                 let newTask = Task(title: title, type: type, status: status)
                 tasks[type]?.append(newTask)
+                handleEmptyRows(&tasks)
                 tableView.reloadData()
             }
         }
@@ -148,6 +155,9 @@ class TaskListController: UITableViewController {
         let taskType = sectionsTypesPosition[indexPath.section]
         tasks[taskType]?.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        // Обработка пустых строк
+        handleEmptyRows(&tasks)
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
     }
 
     
@@ -179,7 +189,7 @@ class TaskListController: UITableViewController {
         // обновляем данные
         tableView.reloadData()
     }
-    
+    // MARK: - Public methods
     func setTasks(_ taskCollection: [TaskProtocol]) {
         // подготовка коллекции с задачами
         // будем использовать только те задачи, для которых определена секция
@@ -190,6 +200,9 @@ class TaskListController: UITableViewController {
         taskCollection.forEach { task in
             tasks[task.type]?.append(task)
         }
+        // обработка пустых строк
+        handleEmptyRows(&tasks)
+        tableView.reloadData()
     }
     
     // MARK: - Private methods
@@ -250,6 +263,9 @@ class TaskListController: UITableViewController {
         guard let currentTask = tasks[taskType]?[indexPath.row] else {
             return cell
         }
+        if currentTask.status == .empty {
+            return tableView.dequeueReusableCell(withIdentifier: "EmptyRowCell", for: indexPath) as! EmptyRowCell
+        }
         // изменяем текст в ячейке
         cell.title.text = currentTask.title
         // изменяем символ в ячейке
@@ -263,6 +279,21 @@ class TaskListController: UITableViewController {
             cell.symbol.textColor = .lightGray
         }
         return cell
+    }
+    
+    func handleEmptyRows(_ tasks: inout [TaskPriority: [TaskProtocol]]) {
+        for (type, arrayOfTasks) in tasks {
+            // if tasks list are empty add new string
+            if arrayOfTasks.isEmpty {
+                tasks[type]?.append(Task(title: "Empty row", type: type, status: .empty))
+                continue
+            }
+            // if tasks list are not empty clear empty task string
+            if let _ = arrayOfTasks.firstIndex(where: { $0.status != .empty}) {
+                tasks[type]?.removeAll(where: {$0.status == .empty})
+            }
+            
+        }
     }
 
 }

@@ -20,6 +20,8 @@
 		6C7492342B7E3CAA008A5CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7492322B7E3CAA008A5CF1 /* Main.storyboard */; };
 		6C7492362B7E3CAB008A5CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7492352B7E3CAB008A5CF1 /* Assets.xcassets */; };
 		6C7492392B7E3CAB008A5CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7492372B7E3CAB008A5CF1 /* LaunchScreen.storyboard */; };
+		6C7627B12B84B29100508DBD /* EmptyRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7627AF2B84B29100508DBD /* EmptyRowCell.swift */; };
+		6C7627B22B84B29100508DBD /* EmptyRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7627B02B84B29100508DBD /* EmptyRowCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		6C7492352B7E3CAB008A5CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C7492382B7E3CAB008A5CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C74923A2B7E3CAB008A5CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7627AF2B84B29100508DBD /* EmptyRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRowCell.swift; sourceTree = "<group>"; };
+		6C7627B02B84B29100508DBD /* EmptyRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyRowCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				6C684DEA2B7F645B00871799 /* TaskCell.swift */,
+				6C7627AF2B84B29100508DBD /* EmptyRowCell.swift */,
+				6C7627B02B84B29100508DBD /* EmptyRowCell.xib */,
 				6C6C02912B80ECE90054EF00 /* TaskTypeCell.swift */,
 				6C6C02922B80ECE90054EF00 /* TaskTypeCell.xib */,
 			);
@@ -174,6 +180,7 @@
 				6C7492362B7E3CAB008A5CF1 /* Assets.xcassets in Resources */,
 				6C6C02942B80ECE90054EF00 /* TaskTypeCell.xib in Resources */,
 				6C7492342B7E3CAA008A5CF1 /* Main.storyboard in Resources */,
+				6C7627B22B84B29100508DBD /* EmptyRowCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +195,7 @@
 				6C74922D2B7E3CAA008A5CF1 /* AppDelegate.swift in Sources */,
 				6C74922F2B7E3CAA008A5CF1 /* SceneDelegate.swift in Sources */,
 				6C684DE62B7F449900871799 /* TasksStorage.swift in Sources */,
+				6C7627B12B84B29100508DBD /* EmptyRowCell.swift in Sources */,
 				6C6C02902B80E4840054EF00 /* TaskTypeController.swift in Sources */,
 				6C684DEB2B7F645B00871799 /* TaskCell.swift in Sources */,
 				6C684DE12B7F411C00871799 /* TaskListController.swift in Sources */,

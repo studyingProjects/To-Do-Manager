@@ -51,7 +51,10 @@ class TasksStorage: TasksStorageProtocol {
     func saveTasks(_ tasks: [TaskProtocol]) {
         var arrayForStorage: [[String:String]] = []
         tasks.forEach { task in
-            var newElementForStorage: Dictionary<String, String> = [:] 
+            if task.status == .empty {
+                return
+            }
+            var newElementForStorage: Dictionary<String, String> = [:]
             newElementForStorage[TaskKey.title.rawValue] = task.title
             newElementForStorage[TaskKey.type.rawValue] = (task.type == .important) ? "important" : "normal"
             newElementForStorage[TaskKey.status.rawValue] = (task.status == .planned) ? "planned" : "completed"
@@ -59,7 +62,6 @@ class TasksStorage: TasksStorageProtocol {
         }
         storage.set(arrayForStorage, forKey: storageKey)
     }
-    
     
 }
 

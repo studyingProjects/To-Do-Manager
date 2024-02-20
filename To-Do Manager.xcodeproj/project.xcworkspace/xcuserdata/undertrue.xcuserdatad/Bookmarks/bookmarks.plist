@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>202</string>
+					<string>222</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>201</string>
+					<string>221</string>
 					<key>Timestamp</key>
-					<string>730043438.803279</string>
+					<string>730129127.2491699</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,16 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            tasks[task.type]?.append(task)
+				<string>        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellConstraints", for: indexPath)
 </string>
 				<key>leading</key>
-				<string>//        
-//        tasksStorage.loadTasks().forEach { task in
-//</string>
+				<string>    private func getConfiguredTaskCell_constraints(for indexPath: IndexPath) -&gt; UITableViewCell {
+        // загружаем прототип ячейки по идентификатору
+</string>
 				<key>trailing</key>
-				<string>//        }
-//    }
-    
+				<string>        // получаем данные о задаче, которую необходимо вывести в ячейке
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let currentTask = tasks[taskType]?[indexPath.row] else {
 </string>
 			</dict>
 			<key>title</key>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>125</string>
+					<string>139</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>124</string>
+					<string>138</string>
 					<key>Timestamp</key>
-					<string>730036873.019143</string>
+					<string>730129127.249182</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -81,20 +81,113 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            editScreen.doAfterEdit = { [self] title, type, status in
+				<string>        }
 </string>
 				<key>leading</key>
-				<string>            editScreen.taskStatus = self.tasks[taskType]![indexPath.row].status
-            // передача обработчика для сохранения задачи
+				<string>            // переход к экрану редактирования
+            self.navigationController?.pushViewController(editScreen, animated: true)
 </string>
 				<key>trailing</key>
-				<string>                let editedTask = Task(title: title, type: type, status: status)
-                tasks[taskType]![indexPath.row] = editedTask
-                tableView.reloadData()
+				<string>        // изменяем цвет фона кнопки с действием
+        actionEditInstance.backgroundColor = .darkGray
+        // создаем объект, описывающий доступные действия
 </string>
 			</dict>
 			<key>title</key>
 			<string>type editing bug</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>10</string>
+					<key>EndingLineNumber</key>
+					<string>46</string>
+					<key>StartingColumnNumber</key>
+					<string>10</string>
+					<key>StartingLineNumber</key>
+					<string>46</string>
+					<key>Timestamp</key>
+					<string>730053267.515012</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>To-Do Manager/Model/TasksStorage.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>            resultTasks.append(Task(title: title, type: type, status: status))
+        }
+        </string>
+				<key>trailing</key>
+				<string>
+        return resultTasks
+    }
+</string>
+			</dict>
+			<key>title</key>
+			<string>add emty string when section is empty with user values</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>31</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>30</string>
+					<key>Timestamp</key>
+					<string>730125189.024076</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>To-Do Manager/TaskListController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    }
+</string>
+				<key>leading</key>
+				<string>            tasksStorage.saveTasks(savingArray)
+        }
+</string>
+				<key>trailing</key>
+				<string>    let sectionsTypesPosition: [TaskPriority] = [.important, .normal]
+    var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
+    
+</string>
+			</dict>
+			<key>title</key>
+			<string>Описание доработок пустой строки</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
